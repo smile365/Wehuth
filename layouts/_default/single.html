@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Description" content="宋洋葱的个人博客,{{ .Title }}"/>
+  <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+  <link rel="stylesheet" href="/css/readability.css" />
+
+  <title>{{ .Title }}</title>
+</head>
+<style type="text/css">
+
+.typo .post_title {
+    margin-bottom: 0.1em; 
+    margin-top: 0;
+    font-weight: 300;
+}
+
+/* 图文元数据: 时间/作者/公众号 */
+.rich_media_meta_list {
+    margin-bottom:18px;
+    line-height:20px;
+    font-size:0
+}
+.rich_media_meta_list em {
+    font-style:normal
+}
+.rich_media_meta {
+    display:inline-block;
+    vertical-align:middle;
+    margin-right:8px;
+    margin-bottom:10px;
+    font-size:16px
+}
+.rich_media_meta_text {
+    color:#8c8c8c
+}
+
+body{
+  padding:20px 15px 15px;
+}
+
+</style>
+<body>
+  <div class="typo">
+      <h2 class="post_title">
+          {{ .Title}}
+      </h2>
+      <div class="rich_media_meta_list">
+          <em id="post-date" class="rich_media_meta rich_media_meta_text">{{ .Date.Format "2006-01-02" }}</em>
+          <em class="rich_media_meta rich_media_meta_text">宋洋葱</em>
+          <a class="rich_media_meta rich_media_meta_link rich_media_meta_nickname" href="javascript:void(0);" id="post-user">宋洋葱</a>
+      </div>
+
+      {{ .Content }}
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+#baseURL = "https://sxy91.com/"
+languageCode = "en"
+title = "宋洋葱的官方网站"
+#theme = "wehuth"
+paginate = 20
+pygmentsCodefences = true
+pygmentsUseClassic = true
+pygmentsStyle = "manni"
+
+
+# Add your own params here
+[params]
+  author = "宋洋葱"
+  aboutme = "javascript:;"
+  #aboutme = "https://github.com/smile365"
+  #seotitle = "宋洋葱的官方网站"
+  description = "若你欲哭无泪，我送你一颗洋葱啊"
+
+  # Choose your social networks
+  github = "https://github.com/smile365"
+  wechat= "https://github.com/smile365" 
+  zhihu = "https://www.zhihu.com/people/sxy91"
+ 
