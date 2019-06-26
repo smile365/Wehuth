@@ -4,8 +4,7 @@ title = "宋洋葱的博客"
 theme = "wehuth"
 paginate = 20
 pygmentsCodefences = true
-pygmentsUseClassic = true
-pygmentsStyle = "manni"
+
 
 [blackfriday]
   extensions = ["noEmptyLineBeforeBlock"]
