@@ -3,20 +3,32 @@
 wechat Hugo theme - wehuth.  
 类似微信公众号文章的hugo主题，[Demo](https://sxy91.com)
 
-## todo	
 
+## idea
+
+栏目+排序
+
+默认显示生活。默认按照热门排序
+栏目：生活/技术/读书/工具/关于。可以是文章集合/也可以是一篇文章。
+
+如果是文章集合，则可以按照：热门/最近，排序。
+留言/回复。
+
+
+## todo	
 - [ ] 百度统计
 - [ ] 使用相对位置absURL
 - [ ] 页脚说明
 - [ ] 阅读数
-- [ ] 微信公众号登录，评论
+- [ ] 微信公众号登录，评论，留言
 - [ ] 赞赏
 - [ ] 分栏目显示
+- [ ] 任务系统，参考[深蓝个人博客](https://bilulanlv.com/task.html)
 
 ## Quick Start
 
 From the root of your Hugo site, clone the theme into `themes/wehuth` by running:
-
+ 
 ```sh
 # Clone theme into the themes/wehuth directory
 $ git clone https://github.com/smile365/wehuth.git themes/wehuth
