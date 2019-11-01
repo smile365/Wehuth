@@ -18,6 +18,7 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
   <title>{{ .Title }}</title>
 </head>
@@ -68,5 +69,13 @@ body{
       {{ .Content }}
 
   </div>
+    <div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'GOpJE0RYEAk1LV2p6Nt5VWdJ-gzGzoHsz',
+            appKey: 'Y6wdl2wwJ1N9PhY6H8t13Iha'
+        })
+    </script>
 </body>
 </html>
