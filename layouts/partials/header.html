@@ -1,0 +1,45 @@
+
+
+  <div style="background-color:#fafafa">
+    <div class="header">
+      <a href="{{ .Site.BaseURL }}">        
+        <div class="avatar">
+          <img src="/img/avatar.jpg" alt="{{ .Site.Params.author }}" />
+        </div>
+      </a>
+      <div class="desc">
+          <div class="name">
+            <a href="{{ .Site.BaseURL }}" >
+              <span>{{ .Site.Params.author }}</span>
+            </a>
+          </div>
+          <div> 
+              <span>{{ .Site.Params.description }}</span>
+          </div>
+          <div class="social" >
+            <a href="{{ .Site.Params.wechat }}"><span class="iconfont icon-weixingongzhonghao"></span></a>
+            <a href="{{ .Site.Params.zhihu }}"><span class="iconfont icon-zhihu"></span></a>
+            <a href="{{ .Site.Params.github }}"><span class="iconfont icon-github"></span></a>
+          </div>
+      </div>
+    </div>
+
+
+     <div class="tab-box">
+        <div class="fieed-box">
+          {{ $page := . }}
+          {{ range .Site.Menus.main }}
+              <a href="{{ .URL }}" title="{{ .Title }}" class="cur">
+                {{ .Name }}
+                {{ if and ($page.IsHome) ( eq .Weight 1 ) }}
+                  <span></span>
+                {{ else if in $page.Permalink .URL }}
+                  <span></span>
+                {{ end }}
+              </a>
+          {{ end }}
+              
+        </div>
+      </div>
+
+  </div>

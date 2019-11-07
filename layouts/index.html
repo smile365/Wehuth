@@ -1,148 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="Keywords" content="宋洋葱,本草洋葱,宋佳小巷,宋学彦,博客,bloger"/>
-  <meta name="Description" content=" {{ .Site.Title }}"/>
-  <meta name="author" content="{{ .Site.Params.author }}" />
-  <!-- Site Generator -->
-  {{ hugo.Generator }}
-  <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
-  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
-  <link rel="stylesheet" type="text/css" href="/css/iconfont.css">
-  <title> {{ .Site.Title }}</title>
-  <script>
-  var _hmt = _hmt || [];
-  (function() {
-    var hm = document.createElement("script");
-    hm.src = "https://hm.baidu.com/hm.js?d1336a401125408e2b0cc8a38bcbf17a";
-    var s = document.getElementsByTagName("script")[0]; 
-    s.parentNode.insertBefore(hm, s);
-  })();
-  </script>
+{{ define "content" }}   
 
-</head>
-<style type="text/css">
-    body{
-          padding: 15px;
-          max-width: 640px;
-          margin-left: auto;
-          margin-right: auto;
-    }
+<div class="post-warp archive">
+    {{ with $.Site.GetPage "taxonomy" (printf "%s" .Site.Params.home_path ) }}
 
-    .header {
-      display: flex;
-    }
+        {{ range .Paginator.Pages }}
+        <article class="archive-item">
+            <a href="{{ .RelPermalink }}" class="archive-item-link">{{ .Title }}</a>
+            <span class="archive-item-date">
+                {{ .Date.Format "2006-02-02" }}
+            </span>
+        </article>
+        {{ end }} 
+        {{ partial "paginator.html" . }}
+    {{ end }}
 
-    .avatar {
-      width: 74px;
-      height: 74px;
-      margin-right: 15px;
-      border-radius: 50%;  
-      overflow:hidden;    
-      -moz-border-radius: 50%;      
-      -webkit-border-radius: 50%;
-      
-    }
-    .avatar img{
-      width: 74px;
-      height: 74px;
-    }
-
-
-    .name {
-      font-size: 22px;
-    }
-    .tth {
-      font-size: 12px;
-      color: #707070;
-    }
-    /* 让链接在 hover 状态下显示下划线 */
-    a {
-      color: #069;
-      text-decoration: none;
-      border-bottom-color: #08c;
-    }
-
-    /* 默认不显示下划线，保持页面简洁 */
-    ins, a {
-      text-decoration: none;
-    }
-
-    .social a{
-        color: #242424;
-        margin-right: 6px;
-        height: 16px;
-        text-decoration: none;
-    }
-
-    .social a:hover{
-        color: #069;
-        text-decoration: none;
-    }
-
-    p {
-      margin: 0;
-    }
-
-    .button {
-      margin-right: 15px;
-    }
-
-    .year {
-      color: #707070;
-      margin-bottom: 0;
-      margin-top: 15px;
-    }
-
-    .btn {
-      margin-top: 20px;
-    }
-</style>
-<body>
-    <div class="header">
-      <a href="{{ .Site.Params.aboutme }}">        
-        <div class="avatar">
-          <img src="/img/avatar.jpg" alt="{{ .Site.Params.author }}" />
-        </div>
-      </a>
-      <div class="desc">
-          <div class="name">
-            <a href="{{ .Site.Params.aboutme }}" >
-              <span>{{ .Site.Params.author }}</span>
-            </a>
-          </div>
-          <div> 
-              <span>{{ .Site.Params.description }}</span>
-          </div>
-          <div class="social">
-            <a href="{{ .Site.Params.wechat }}"><span class="iconfont icon-weixingongzhonghao"></span></a>
-            <a href="{{ .Site.Params.zhihu }}"><span class="iconfont icon-zhihu"></span></a>
-            <a href="{{ .Site.Params.github }}"><span class="iconfont icon-github"></span></a>
-          </div>
-      </div>
-    </div>
-
-    <div>
-      <div class="posts">
-        {{ range (.Paginate (.Pages.GroupByDate "2006-01")).PageGroups}}
-        <p class="year">{{ .Key }}</p>
-        {{ range .Pages }}
-        <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
-        {{ end }}
-      {{ end }}
-      </div>
-
-      <div class="btn">
-        {{ if .Paginator.HasPrev }}
-        <a class="button is-rounded" href="{{ .Paginator.Prev.URL }}">上一页</a>
-        {{ end }}
-        {{ if .Paginator.HasNext }}
-        <a class="button is-rounded" href="{{ .Paginator.Next.URL }}">下一页</a>
-      {{ end }}    
-      </div>
-
-    </div>
-
-</body>
-</html>
+   
+</div>
+{{ end }}

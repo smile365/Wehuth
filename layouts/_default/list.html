@@ -1,0 +1,18 @@
+{{ define "content" }} 
+
+<div class="post-warp archive">
+        
+
+        {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+        {{ range .Pages }}
+        <article class="archive-item">
+            <a href="{{ .RelPermalink }}" class="archive-item-link">{{ .Title }}</a>
+            <span class="archive-item-date">
+                {{ .Date.Format "2006-02-02" }}
+            </span>
+        </article>
+        {{ end }} {{ end }} 
+        {{ partial "paginator.html" . }}
+</div>
+
+{{ end }}

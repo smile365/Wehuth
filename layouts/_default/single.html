@@ -1,81 +1,27 @@
-<!DOCTYPE HTML>
-<html lang="zh">
-<head>
-  <meta charset="UTF-8">
-  <meta name="Description" content="{{ .Site.Title }},{{ .Title }}"/>
-  <meta name="Keywords" content="{{ .Site.Params.author }},{{ if isset .Params "tags"}} 
-  {{delimit .Params.tags "," }}{{ end }}"/>
-  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
-  <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
-  <link rel="stylesheet" href="/css/readability.css" />
+{{ define "content" -}}
 
-  <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?d1336a401125408e2b0cc8a38bcbf17a";
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-  <title>{{ .Title }}</title>
-</head>
-<style type="text/css">
-
-.typo .post_title {
-    margin-bottom: 0.1em; 
-    margin-top: 0;
-    font-weight: 300;
-}
-
-/* 图文元数据: 时间/作者/公众号 */
-.rich_media_meta_list {
-    margin-bottom:18px;
-    line-height:20px;
-    font-size:0
-}
-.rich_media_meta_list em {
-    font-style:normal
-}
-.rich_media_meta {
-    display:inline-block;
-    vertical-align:middle;
-    margin-right:8px;
-    margin-bottom:10px;
-    font-size:16px
-}
-.rich_media_meta_text {
-    color:#8c8c8c
-}
-
-body{
-  padding:20px 15px 15px;
-}
-
-</style>
-<body>
   <div class="typo">
       <h2 class="post_title">
           {{ .Title}}
       </h2>
+      
       <div class="rich_media_meta_list">
           <em class="rich_media_meta rich_media_meta_text">{{ .Date.Format "2006-01-02" }}</em>
           <em class="rich_media_meta rich_media_meta_text">{{ .Site.Params.author }}</em>
           <a class="rich_media_meta" href="{{ .Site.BaseURL }}">{{ .Site.Params.author }}</a>
       </div>
-
       {{ .Content }}
 
+      <div id="vcomments"></div>
   </div>
-    <div id="vcomments"></div>
+    
     <script>
-        new Valine({
-            el: '#vcomments',
-            appId: 'GOpJE0RYEAk1LV2p6Nt5VWdJ-gzGzoHsz',
-            appKey: 'Y6wdl2wwJ1N9PhY6H8t13Iha'
-        })
-    </script>
-</body>
-</html>
+      new Valine({
+          el: '#vcomments',
+          appId: 'GOpJE0RYEAk1LV2p6Nt5VWdJ-gzGzoHsz',
+          appKey: 'Y6wdl2wwJ1N9PhY6H8t13Iha'
+      })
+   </script>
+
+{{- end }}

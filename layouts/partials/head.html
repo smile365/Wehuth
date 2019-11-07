@@ -1,0 +1,24 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="Keywords" content="宋洋葱,本草洋葱,宋佳小巷,宋学彦,博客,bloger"/>
+  <meta name="Description" content=" {{ .Site.Title }}"/>
+  <meta name="author" content="{{ .Site.Params.author }}" />
+  <!-- Site Generator -->
+  {{ hugo.Generator }}
+  <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
+  <title> {{ .Site.Title }}</title>
+  {{ partial "css" . }}
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?d1336a401125408e2b0cc8a38bcbf17a";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  {{ if .IsPage }}
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  {{ end }}
+</head>
