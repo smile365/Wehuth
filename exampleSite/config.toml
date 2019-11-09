@@ -3,7 +3,8 @@ languageCode = "zh"
 title = "宋洋葱的博客"
 theme = "wehuth"
 paginate = 10
-#pygmentsCodefences = true
+
+#pygmentsCodefences = true # 代码高亮
 hasCJKLanguage = true
 watch = true
 
