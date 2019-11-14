@@ -1,13 +1,37 @@
 <head>
   <meta charset="UTF-8">
-  <meta name="Keywords" content="宋洋葱,本草洋葱,宋佳小巷,宋学彦,博客,bloger"/>
-  <meta name="Description" content=" {{ .Site.Title }}"/>
-  <meta name="author" content="{{ .Site.Params.author }}" />
   <!-- Site Generator -->
   {{ hugo.Generator }}
   <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
-  <title> {{ .Site.Title }}</title>
+  {{ if .Params.tags }}
+  <meta name="keywords" content="{{ delimit .Params.tags ", " }}">
+  {{ else if .Site.Params.Keywords }}
+  <meta name="keywords" content="{{ .Site.Params.Keywords }}">
+  {{ end }}
+  
+  {{ if .Description }}
+  <meta name="description" content="{{ .Description }}">
+  {{ else if .Site.Params.Description}}
+  <meta name="description" content="{{ .Site.Params.Description }}">
+  {{ end }}
+
+  <title>
+     {{ if .IsHome }}
+        首页 - {{ .Site.Title }}
+     {{ else if .Params.heading }}
+         {{ .Params.heading }}
+     {{ else }}
+         {{ .Title }} | {{ .Site.Title }}
+     {{ end }}
+  </title>
+  <meta name="title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else if .Params.heading }}{{ .Params.heading }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end}}">
+  <link rel="alternate" href="{{ .RelPermalink }}" type="application/rss+xml" title="{{ site.Title }}">
+  <link rel="feed" href="{{ .RelPermalink }}" type="application/rss+xml" title="{{ site.Title }}">
+
+  {{ partial "seo_schema" . }}
+
   {{ partial "css" . }}
   <script>
   var _hmt = _hmt || [];

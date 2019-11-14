@@ -41,8 +41,18 @@ watch = true
   author = "宋洋葱"
   #aboutme = "javascript:;"
   aboutme = "https://github.com/smile365"
-  #seotitle = "宋洋葱的博客"
-  description = "若你欲哭无泪，我送你一颗洋葱啊"
+  subtitle = "若你欲哭无泪，我送你一颗洋葱啊"
+  description = "研究互联网产品和技术，提供原创中文精品教程" # site description
+  keywords = "javascript,html,jquery,git,python,java,css,linux,bitcoin,教程,软件,编程,开发,运维,云计算,网络,互联网,比特币,数字货币,博客,赚钱" # site keywords
+
+  google_verification = ""
+  bing_verification = ""
+  yandex_verification = ""
+  pinterest_verification = ""
+  baidu_verification = ""
+    
+
+  license= 'Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
 
   # Choose your social networks
   github = "https://github.com/smile365"

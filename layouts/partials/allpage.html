@@ -1,0 +1,10 @@
+
+{{ define "content" }}   
+
+	{{ range .Pages }}
+	<ul>
+		<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+	</ul>
+	{{ end }} 
+</div>
+{{ end }}
