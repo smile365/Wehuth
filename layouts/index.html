@@ -1,4 +1,4 @@
-{{ define "content" }}   
+{{ define "content" }} 
 
 <div class="post-warp archive">
     {{ with $.Site.GetPage "taxonomy" (printf "%s" .Site.Params.home_path ) }}
@@ -13,7 +13,6 @@
         {{ end }} 
         {{ partial "paginator.html" . }}
     {{ end }}
-
-   
 </div>
+
 {{ end }}
