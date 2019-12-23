@@ -324,3 +324,9 @@ h1, h2, h3, h4, h5, h6 {
 .typo img {
   max-width: 50%;
 }
+
+/* 表格下的图片 */
+td img {
+    width: 100px;
+    max-height: 200px;
+}
