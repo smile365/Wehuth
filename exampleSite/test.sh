@@ -1,30 +1,21 @@
 
-home=/home/www
+home=/Users/songyangcong/project
 blog=$home/blog
 life=$home/live4life
 theme=$home/wehuth
-site=$home/myblog/
+site=$home/myblog
 posts=$site/content/posts/
 
-cd $blog
-binfo=$(git pull)
-echo "$binfo"
-
-cd $life
-linfo=$(git pull)
-echo "$linfo"
-
-cd $theme
-tinfo=pinfo=$(git pull)
-echo "$tinfo"
-
-#if [[ $blog == *".."* ]] || [[ $life == *".."* ]] || [[ $theme == *".."* ]]; then
+mkdir -p $posts
 cp $blog/*.md $posts
 cp $life/*.md $posts
 cp -r $theme $site/themes
 cp $theme/exampleSite/config.toml $site
 cd $site
-hugo
+
+hugo server -D -t wehuth --bind=0.0.0.0 --baseURL=http://127.0.0.1:1313
+
+# hugo
 #fi
 
 # cp -r wehuth quickstart/themes/

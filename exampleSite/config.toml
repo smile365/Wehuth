@@ -2,7 +2,7 @@ baseURL = "https://sxy91.com/"
 languageCode = "zh"
 title = "宋洋葱的博客"
 theme = "wehuth"
-paginate = 10
+paginate = 15
 
 #pygmentsCodefences = true # 代码高亮
 hasCJKLanguage = true
